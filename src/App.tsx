@@ -8,9 +8,10 @@ function App() {
     width: 0,
     height: 0,
   });
-  const handleSizeChange = (size: IPlaygroundSize) => {
-    setSize(size);
+  const handleSizeChange = (newSize: IPlaygroundSize) => {
+    setSize(newSize);
   };
+  console.log(size);
   return (
     <div className="bg-blue-400  h-screen">
       <div className="flex justify-center">Hi! This is the homepage!</div>

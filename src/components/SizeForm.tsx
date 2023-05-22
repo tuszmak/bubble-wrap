@@ -1,11 +1,17 @@
-import React from "react";
+import React, { FormEvent, useState } from "react";
 import { IPlaygroundSize } from "../types";
 
-export const SizeForm = (changer :any ) => {
-    const handleSubmit = ()=>{}
+export const SizeForm = ({changer = (newSize : IPlaygroundSize) => {}}) => {
+  const handleSubmit = (e: FormEvent) => {
+    const newPlaygroundSize: IPlaygroundSize = { width: width, height: height };
+    e.preventDefault();
+    changer(newPlaygroundSize);
+  };
+  const [width, setWidth] = useState<Number>(0);
+  const [height, setHeight] = useState<Number>(0);
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={(e) => handleSubmit(e)}>
         <div className="form-control">
           <label className="input-group input-group-lg">
             <span>Width</span>
@@ -13,6 +19,8 @@ export const SizeForm = (changer :any ) => {
               type="text"
               placeholder="Type here"
               className="input input-bordered input-lg"
+              onChange={(e) => setWidth(parseInt(e.target.value))}
+              value={width?.toString()}
             />
           </label>
         </div>
@@ -23,10 +31,15 @@ export const SizeForm = (changer :any ) => {
               type="text"
               placeholder="Type here"
               className="input input-bordered input-lg"
+              onChange={(e) => setHeight(parseInt(e.target.value))}
+              defaultValue={height?.toString()}
             />
           </label>
         </div>
+        <button className="btn bg-white hover:bg-slate-200" type="submit">
+          Submit
+        </button>
       </form>
     </div>
   );
-}
+};
