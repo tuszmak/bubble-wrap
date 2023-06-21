@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import popSFX from "../sounds/pop.mp3"
+import bubble from '../assets/bubble.jpg'
 
 
 export const Pop = () => {
@@ -12,9 +13,9 @@ export const Pop = () => {
   return (
     
     isPopped ? 
-    <button className='btn w-16'>Pop!</button>
+    <button className='btn w-16 h-16'>Pop!</button>
     :
-    <button className='btn w-16' onClick={handleClick}></button>
+    <button className='w-16 h-16' onClick={handleClick}><img src={bubble} alt="" /></button>
 
   )
 }

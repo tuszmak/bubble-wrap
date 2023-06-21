@@ -9,11 +9,13 @@ export const Game = ({ size }: { size: IPlaygroundSize }) => {
   const array = new Array<number>(numberOfPops).fill(1);
   return (
     <div>
-      Game
-      <div className="flex flex-wrap w-full ">
-        {array.map((e, i) => {
-          return (<Pop key={i} />);
-        })}
+      <div>Game</div>
+      <div className="flex justify-center">
+        <div className="flex flex-wrap w-1/2 justify-center ">
+          {array.map((e, i) => {
+            return <Pop key={i} />;
+          })}
+        </div>
       </div>
     </div>
   );
