@@ -7,14 +7,11 @@ export const Game = ({ size }: { size: IPlaygroundSize }) => {
     Number(size.height) * Number(size.width)
   );
   const array = new Array<number>(numberOfPops).fill(1);
-  // const array = new Array<number>(numberOfPops);
-  console.log(array);
   return (
     <div>
       Game
-      <div>
+      <div className="flex flex-wrap w-full ">
         {array.map((e, i) => {
-          console.log(i); 
           return (<Pop key={i} />);
         })}
       </div>
