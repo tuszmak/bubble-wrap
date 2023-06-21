@@ -16,7 +16,7 @@ export const SizeForm = ({changer = (newSize : IPlaygroundSize) => {}}) => {
           <label className="input-group input-group-lg">
             <span>Width</span>
             <input
-              type="text"
+              type="number"
               placeholder="Type here"
               className="input input-bordered input-lg"
               onChange={(e) => setWidth(parseInt(e.target.value))}
