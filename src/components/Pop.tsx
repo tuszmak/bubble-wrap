@@ -10,15 +10,11 @@ export const Pop = () => {
     await new Promise((e) => setTimeout(e, 110));
     setIsPopped(true);
   };
-  const handleDown = () => {
-    setIsMouseDown(true);
-    console.log("pog");
-    
-  };
+  // const handleDown = () => {
+  //   setIsMouseDown(true);    
+  // };
   const handleUp = () => {
     setIsMouseDown(false);
-    console.log("pog");
-    
   };
   const [isPopped, setIsPopped] = useState<boolean>(false);
   return isPopped ? (

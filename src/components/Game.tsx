@@ -1,11 +1,7 @@
-import { useState } from "react";
-import { IGameProps, IPlaygroundSize } from "../types";
+import { IGameProps } from "../types";
 import { Pop } from "./Pop";
 
 export const Game = (props : IGameProps) => {
-  const [numberOfPops] = useState<number>(
-    Number(props.size.height) * Number(props.size.width)
-  );
   const array1 = new Array<number>(props.size.width).fill(1);
   const array2 = new Array<number>(props.size.height).fill(1);
   return (

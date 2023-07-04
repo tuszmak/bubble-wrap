@@ -1,7 +1,7 @@
-import React, { FormEvent, useState } from "react";
+import { FormEvent, useState } from "react";
 import { IPlaygroundSize } from "../types";
 
-export const SizeForm = ({changer = (newSize : IPlaygroundSize) => {}}) => {
+export const SizeForm = ({changer = (_ : IPlaygroundSize) => {}}) => {
   const handleSubmit = (e: FormEvent) => {
     const newPlaygroundSize: IPlaygroundSize = { width: width, height: height };
     e.preventDefault();
