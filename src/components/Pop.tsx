@@ -1,21 +1,33 @@
-import React, { useState } from 'react'
-import popSFX from "../sounds/pop.mp3"
-import bubble from '../assets/bubble.jpg'
-
+import React, { useState } from "react";
+import popSFX from "../sounds/pop.mp3";
+import bubble from "../assets/bubble.jpg";
 
 export const Pop = () => {
-  const handleClick = async()=>{
-    new Audio(popSFX).play();
-      await new Promise(e => setTimeout(e, 110))
-      setIsPopped(true)
-  }
-  const [isPopped, setIsPopped] = useState<boolean>(false);
-  return (
+  const [isMouseDown, setIsMouseDown] = useState(false);
+  const handleClick = async () => {
     
-    isPopped ? 
-    <button className='btn w-16 h-16'>Pop!</button>
-    :
-    <button className='w-16 h-16' onClick={handleClick}><img src={bubble} alt="" /></button>
-
-  )
-}
+    new Audio(popSFX).play();
+    await new Promise((e) => setTimeout(e, 110));
+    setIsPopped(true);
+  };
+  const handleDown = () => {
+    setIsMouseDown(true);
+    console.log("pog");
+    
+  };
+  const handleUp = () => {
+    setIsMouseDown(false);
+    console.log("pog");
+    
+  };
+  const [isPopped, setIsPopped] = useState<boolean>(false);
+  return isPopped ? (
+    <button className="w-16 h-16 opacity-50">
+      <img src={bubble} alt="" />
+    </button>
+  ) : (
+    <button className="w-16 h-16" onMouseDown={handleClick} onMouseEnter={handleClick} onMouseUp={handleUp}>
+      <img src={bubble} alt="" />
+    </button>
+  );
+};

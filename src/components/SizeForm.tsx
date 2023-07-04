@@ -7,8 +7,8 @@ export const SizeForm = ({changer = (newSize : IPlaygroundSize) => {}}) => {
     e.preventDefault();
     changer(newPlaygroundSize);
   };
-  const [width, setWidth] = useState<Number>(0);
-  const [height, setHeight] = useState<Number>(0);
+  const [width, setWidth] = useState<number>(0);
+  const [height, setHeight] = useState<number>(0);
   return (
     <div className="flex gap-y-5 content-center">
       <form onSubmit={(e) => handleSubmit(e)}>

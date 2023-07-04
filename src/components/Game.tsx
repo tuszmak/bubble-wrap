@@ -1,20 +1,32 @@
 import { useState } from "react";
-import { IPlaygroundSize } from "../types";
+import { IGameProps, IPlaygroundSize } from "../types";
 import { Pop } from "./Pop";
 
-export const Game = ({ size }: { size: IPlaygroundSize }) => {
-  const [numberOfPops, setNumberOfPops] = useState<number>(
-    Number(size.height) * Number(size.width)
+export const Game = (props : IGameProps) => {
+  const [numberOfPops] = useState<number>(
+    Number(props.size.height) * Number(props.size.width)
   );
-  const array = new Array<number>(numberOfPops).fill(1);
+  const array1 = new Array<number>(props.size.width).fill(1);
+  const array2 = new Array<number>(props.size.height).fill(1);
   return (
     <div>
-      <div>Game</div>
+      <div>
+        <button className="btn btn-primary" onClick={props.gameOver}>Back</button>
+      </div>
       <div className="flex justify-center">
-        <div className="flex flex-wrap w-1/2 justify-center ">
-          {array.map((e, i) => {
+        <div className="flex flex-wrap justify-center ">
+          {/* {array.map((_, i) => {
             return <Pop key={i} />;
-          })}
+          })} */}
+          <table>
+            <tbody>
+            {
+              array1.map((_,ri)=><tr>
+                {array2.map((_,i)=>(<Pop key={ri *i} />))}
+              </tr>)
+            }
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
