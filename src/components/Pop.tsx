@@ -1,20 +1,12 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import popSFX from "../sounds/pop.mp3";
 import bubble from "../assets/bubble.jpg";
 
 export const Pop = (props: any) => {
-  const [isMouseDown, setIsMouseDown] = useState(false);
-
   const handleClick = async () => {
     new Audio(popSFX).play();
-    await new Promise((e) => setTimeout(e, 110));
+    await new Promise((e) => setTimeout(e, 110)); // Time required for the click to sync with audio
     setIsPopped(true);
-  };
-  const handleDown = () => {
-    setIsMouseDown(true);
-  };
-  const handleUp = () => {
-    setIsMouseDown(false);
   };
   const [isPopped, setIsPopped] = useState<boolean>(false);
   return isPopped ? (
@@ -22,19 +14,11 @@ export const Pop = (props: any) => {
       <img src={bubble} alt="" className="max-w-full" />
     </button>
   ) : props.isHover ? (
-    <button
-      className="w-16 h-16"
-      onMouseDown={handleClick}
-      onMouseUp={handleUp}
-    >
+    <button className="w-16 h-16" onMouseDown={handleClick}>
       <img src={bubble} alt="" />
     </button>
   ) : (
-    <button
-      className="w-16 h-16"
-      onMouseUp={handleUp}
-      onMouseEnter={handleClick}
-    >
+    <button className="w-16 h-16" onMouseEnter={handleClick}>
       <img src={bubble} alt="" />
     </button>
   );

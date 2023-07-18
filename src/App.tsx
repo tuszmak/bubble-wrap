@@ -7,19 +7,8 @@ import { Game } from "./components/Game";
 function App() {
   const [size, setSize] = useState<IPlaygroundSize>({ width: 0, height: 0 });
   const [isGameOn, setIsgameOn] = useState<boolean>(size.width > 0);
-  if (localStorage.getItem("size")) {
-    const storedSizeJSON = localStorage.getItem("size");
-    if (storedSizeJSON && size.width === 0) {
-      const storedSize = JSON.parse(storedSizeJSON);
-      console.log(storedSize);
-      if (storedSize.width > 0) {
-        setSize(storedSize);
-      }
-    }
-  }
   const handleSizeChange = (newSize: IPlaygroundSize) => {
     setSize(newSize);
-    localStorage.setItem("size", JSON.stringify(newSize));
     setIsgameOn(true);
   };
   const handleGameOver = () => {
