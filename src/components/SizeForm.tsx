@@ -6,7 +6,7 @@ export const SizeForm = ({changer = (_ : IPlaygroundSize) => {}}) => {
     const newPlaygroundSize: IPlaygroundSize = { width: width, height: height };
     e.preventDefault();
     if(width === 0 || height === 0){
-      
+      //warning
     }
     changer(newPlaygroundSize);
   };

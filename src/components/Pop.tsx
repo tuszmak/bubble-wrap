@@ -4,7 +4,6 @@ import bubble from "../assets/bubble.jpg";
 
 export const Pop = (props: any) => {
   const [isMouseDown, setIsMouseDown] = useState(false);
-  console.log(props.isHover);
 
   const handleClick = async () => {
     new Audio(popSFX).play();
@@ -20,7 +19,7 @@ export const Pop = (props: any) => {
   const [isPopped, setIsPopped] = useState<boolean>(false);
   return isPopped ? (
     <button className="w-16 h-16 opacity-50">
-      <img src={bubble} alt="" />
+      <img src={bubble} alt="" className="max-w-full" />
     </button>
   ) : props.isHover ? (
     <button
