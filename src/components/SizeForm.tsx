@@ -5,6 +5,9 @@ export const SizeForm = ({changer = (_ : IPlaygroundSize) => {}}) => {
   const handleSubmit = (e: FormEvent) => {
     const newPlaygroundSize: IPlaygroundSize = { width: width, height: height };
     e.preventDefault();
+    if(width === 0 || height === 0){
+      
+    }
     changer(newPlaygroundSize);
   };
   const [width, setWidth] = useState<number>(0);
@@ -14,7 +17,7 @@ export const SizeForm = ({changer = (_ : IPlaygroundSize) => {}}) => {
       <form onSubmit={(e) => handleSubmit(e)}>
         <div className="form-control">
           <label className="input-group input-group-lg">
-            <span>Width</span>
+            <span className="w-20">Width</span>
             <input
               type="number"
               placeholder="Type here"
@@ -26,7 +29,7 @@ export const SizeForm = ({changer = (_ : IPlaygroundSize) => {}}) => {
         </div>
         <div className="form-control">
           <label className="input-group input-group-lg">
-            <span>Height</span>
+            <span className="w-20">Height</span>
             <input
               type="text"
               placeholder="Type here"
