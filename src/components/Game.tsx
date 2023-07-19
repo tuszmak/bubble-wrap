@@ -5,10 +5,10 @@ import { Pop } from "./Pop";
 export const Game = (props: IGameProps) => {
   const widthArray = new Array<number>(props.size.width).fill(1);
   const heightArray = new Array<number>(props.size.height).fill(1);
-  const [isHover, setIsHover] = useState<boolean>(false);
+  const [isClick, setIsClick] = useState<boolean>(true);
   const [refresh, setRefresh] = useState<boolean>(true);
   const handleChange = () => {
-    setIsHover(!isHover);
+    setIsClick(!isClick);
   };
   const handleRefresh = async () => {
     setRefresh(!refresh);
@@ -19,7 +19,7 @@ export const Game = (props: IGameProps) => {
         <button className="btn btn-primary" onClick={props.gameOver}>
           Back
         </button>
-        {isHover ? (
+        {isClick ? (
           <button className="btn btn-primary" onClick={handleChange}>
             Change to hover
           </button>
@@ -42,7 +42,7 @@ export const Game = (props: IGameProps) => {
                 widthArray.map((_, ri) => (
                   <tr>
                     {heightArray.map((_, i) => (
-                      <Pop key={ri * i} isHover={isHover} />
+                      <Pop key={ri * i} isHover={isClick} />
                     ))}
                   </tr>
                 ))
