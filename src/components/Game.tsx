@@ -14,7 +14,7 @@ export const Game = (props: IGameProps) => {
     setRefresh(!refresh);
   };
   return (
-    <div>
+    <div className="bg-blue-400">
       <div>
         <button className="btn btn-primary" onClick={props.gameOver}>
           Back
@@ -42,7 +42,7 @@ export const Game = (props: IGameProps) => {
                 widthArray.map((_, ri) => (
                   <tr>
                     {heightArray.map((_, i) => (
-                      <Pop key={ri * i} isHover={isClick} />
+                      <Pop key={ri * i + 1} isHover={isClick} />
                     ))}
                   </tr>
                 ))
