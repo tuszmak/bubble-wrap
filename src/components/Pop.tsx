@@ -5,7 +5,10 @@ import { IPopProps } from "../types";
 
 export const Pop = (props: IPopProps) => {
   const handleClick = async () => {
-    new Audio(popSFX).play();
+    
+    let popSound = new Audio(popSFX);
+    popSound.volume = 0.4;
+    popSound.play()
     await new Promise((e) => setTimeout(e, 110)); // Time required for the click to sync with audio
     setIsPopped(true);
   };
