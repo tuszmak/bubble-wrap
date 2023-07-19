@@ -3,8 +3,8 @@ import { IGameProps } from "../types";
 import { Pop } from "./Pop";
 
 export const Game = (props: IGameProps) => {
-  const array1 = new Array<number>(props.size.width).fill(1);
-  const array2 = new Array<number>(props.size.height).fill(1);
+  const widthArray = new Array<number>(props.size.width).fill(1);
+  const heightArray = new Array<number>(props.size.height).fill(1);
   const [isHover, setIsHover] = useState<boolean>(false);
   const [refresh, setRefresh] = useState<boolean>(true);
   const handleChange = () => {
@@ -39,9 +39,9 @@ export const Game = (props: IGameProps) => {
           <table>
             <tbody>
               {refresh ? (
-                array1.map((_, ri) => (
+                widthArray.map((_, ri) => (
                   <tr>
-                    {array2.map((_, i) => (
+                    {heightArray.map((_, i) => (
                       <Pop key={ri * i} isHover={isHover} />
                     ))}
                   </tr>
