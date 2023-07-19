@@ -1,4 +1,12 @@
 export interface IPlaygroundSize {
-    width: Number;
-    height: Number;
+    width: number;
+    height: number;
   }
+export interface IGameProps {
+  size: IPlaygroundSize,
+  gameOver: ()=>void
+}
+export interface IPopProps{
+  key: number,
+  isHover: boolean
+}

@@ -1,20 +1,23 @@
-import React, { FormEvent, useState } from "react";
+import { FormEvent, useState } from "react";
 import { IPlaygroundSize } from "../types";
 
-export const SizeForm = ({changer = (newSize : IPlaygroundSize) => {}}) => {
+export const SizeForm = ({changer = (_ : IPlaygroundSize) => {}}) => {
   const handleSubmit = (e: FormEvent) => {
     const newPlaygroundSize: IPlaygroundSize = { width: width, height: height };
     e.preventDefault();
+    if(width === 0 || height === 0){
+      //warning
+    }
     changer(newPlaygroundSize);
   };
-  const [width, setWidth] = useState<Number>(0);
-  const [height, setHeight] = useState<Number>(0);
+  const [width, setWidth] = useState<number>(0);
+  const [height, setHeight] = useState<number>(0);
   return (
     <div className="flex gap-y-5 content-center">
       <form onSubmit={(e) => handleSubmit(e)}>
         <div className="form-control">
           <label className="input-group input-group-lg">
-            <span>Width</span>
+            <span className="w-20">Width</span>
             <input
               type="number"
               placeholder="Type here"
@@ -26,7 +29,7 @@ export const SizeForm = ({changer = (newSize : IPlaygroundSize) => {}}) => {
         </div>
         <div className="form-control">
           <label className="input-group input-group-lg">
-            <span>Height</span>
+            <span className="w-20">Height</span>
             <input
               type="text"
               placeholder="Type here"
