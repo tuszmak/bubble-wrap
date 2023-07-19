@@ -1,4 +1,3 @@
-import "./App.css";
 import { SizeForm } from "./components/SizeForm";
 import { useState } from "react";
 import { IPlaygroundSize } from "./types";

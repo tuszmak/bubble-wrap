@@ -14,7 +14,7 @@ export const Game = (props: IGameProps) => {
     setRefresh(!refresh);
   };
   return (
-    <div className="bg-blue-400 h-screen">
+    <div className="bg-blue-400 min-h-screen">
       <div>
         <button className="btn btn-primary" onClick={props.gameOver}>
           Back
@@ -28,11 +28,15 @@ export const Game = (props: IGameProps) => {
             Change to tap
           </button>
         )}
-        {refresh ? <button className="btn btn-primary" onClick={handleRefresh}>
-          Clear board
-        </button>: <button className="btn btn-primary" onClick={handleRefresh}>
-          Get new board
-        </button>}
+        {refresh ? (
+          <button className="btn btn-primary" onClick={handleRefresh}>
+            Clear board
+          </button>
+        ) : (
+          <button className="btn btn-primary" onClick={handleRefresh}>
+            Get new board
+          </button>
+        )}
       </div>
       <div className="flex justify-center">
         <div className="flex flex-wrap justify-center ">
@@ -46,7 +50,9 @@ export const Game = (props: IGameProps) => {
                     ))}
                   </tr>
                 ))
-              ) : <></>}
+              ) : (
+                <></>
+              )}
             </tbody>
           </table>
         </div>
