@@ -1,4 +1,3 @@
-import "./App.css";
 import { SizeForm } from "./components/SizeForm";
 import { useState } from "react";
 import { IPlaygroundSize } from "./types";
@@ -20,7 +19,9 @@ function App() {
     <div className="bg-blue-400 h-screen">
       <div className="flex items-center  font-serif flex-col">
         <p className="text-6xl">Bubble wrap!</p>
-        <p className="text-4xl mt-4">Please enter your game field parameters:</p>
+        <p className="text-4xl mt-4">
+          Please enter your game field parameters:
+        </p>
       </div>
       <div className="p-20 flex justify-center items-center">
         <SizeForm key="form" changer={handleSizeChange} />
