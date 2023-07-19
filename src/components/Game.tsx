@@ -14,7 +14,7 @@ export const Game = (props: IGameProps) => {
     setRefresh(!refresh);
   };
   return (
-    <div className="bg-blue-400">
+    <div className="bg-blue-400 h-screen">
       <div>
         <button className="btn btn-primary" onClick={props.gameOver}>
           Back
