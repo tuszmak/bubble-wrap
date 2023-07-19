@@ -13,9 +13,9 @@ export const SizeForm = ({changer = (_ : IPlaygroundSize) => {}}) => {
   const [width, setWidth] = useState<number>(0);
   const [height, setHeight] = useState<number>(0);
   return (
-    <div className="flex gap-y-5 content-center">
-      <form onSubmit={(e) => handleSubmit(e)}>
-        <div className="form-control">
+    <div className="flex gap-y-5 content-center  shadow-slate-400">
+      <form onSubmit={(e) => handleSubmit(e)} className="flex flex-col">
+        <div className="form-control p-5">
           <label className="input-group input-group-lg">
             <span className="w-20">Width</span>
             <input
@@ -27,7 +27,7 @@ export const SizeForm = ({changer = (_ : IPlaygroundSize) => {}}) => {
             />
           </label>
         </div>
-        <div className="form-control">
+        <div className="form-control p-5">
           <label className="input-group input-group-lg">
             <span className="w-20">Height</span>
             <input
