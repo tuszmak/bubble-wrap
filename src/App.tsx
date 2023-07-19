@@ -6,13 +6,13 @@ import { Game } from "./components/Game";
 
 function App() {
   const [size, setSize] = useState<IPlaygroundSize>({ width: 0, height: 0 });
-  const [isGameOn, setIsgameOn] = useState<boolean>(size.width > 0);
+  const [isGameOn, setIsGameOn] = useState<boolean>(size.width > 0);
   const handleSizeChange = (newSize: IPlaygroundSize) => {
     setSize(newSize);
-    setIsgameOn(true);
+    setIsGameOn(true);
   };
   const handleGameOver = () => {
-    setIsgameOn(false);
+    setIsGameOn(false);
   };
   return isGameOn ? (
     <Game key={"game"} size={size} gameOver={handleGameOver} />
