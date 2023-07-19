@@ -17,7 +17,7 @@ export const SizeForm = ({changer = (_ : IPlaygroundSize) => {}}) => {
       <form onSubmit={(e) => handleSubmit(e)} className="flex flex-col">
         <div className="form-control p-5">
           <label className="input-group input-group-lg">
-            <span className="w-20">Width</span>
+            <span className="w-20">Width:</span>
             <input
               type="number"
               placeholder="Type here"
@@ -29,7 +29,7 @@ export const SizeForm = ({changer = (_ : IPlaygroundSize) => {}}) => {
         </div>
         <div className="form-control p-5">
           <label className="input-group input-group-lg">
-            <span className="w-20">Height</span>
+            <span className="w-20">Height:</span>
             <input
               type="text"
               placeholder="Type here"
