@@ -1,5 +1,8 @@
 Bubble wrap is a website where you can set a width and a height for a play field, and then pop bubble wrap!
 
+# My experience
+
+This is my first solo project after I finished the school Codecool, and my first project involving Typescript without any previous knowledge of the language.
 
 # Requirements:
 
