@@ -1,4 +1,3 @@
-import "./App.css";
 import { SizeForm } from "./components/SizeForm";
 import { useState } from "react";
 import { IPlaygroundSize } from "./types";
@@ -17,9 +16,10 @@ function App() {
   return isGameOn ? (
     <Game key={"game"} size={size} gameOver={handleGameOver} />
   ) : (
-    <div className="bg-blue-400  h-screen">
-      <div className="flex justify-center text-6xl font-serif">
-        Hi! This is the homepage!
+    <div className="bg-blue-400 h-screen">
+      <div className="flex items-center  font-serif flex-col">
+        <p className="text-6xl mt-10">Bubble wrap!</p>
+        <p className="text-4xl mt-4">Please enter your game field parameters:</p>
       </div>
       <div className="p-20 flex justify-center items-center">
         <SizeForm key="form" changer={handleSizeChange} />
