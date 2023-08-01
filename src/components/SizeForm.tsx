@@ -9,11 +9,11 @@ export const SizeForm = ({ changer = (_: IPlaygroundSize) => {} }) => {
   const [width, setWidth] = useState<number>(0);
   const [height, setHeight] = useState<number>(0);
   return (
-    <div className="flex gap-y-5 content-center">
+    <div className="flex gap-y-5 content-center flex-col">
       <form onSubmit={() => handleSubmit()}>
         <div className="form-control">
           <label className="input-group input-group-lg">
-            <span className="w-20">Width</span>
+            <span className="w-20">Width:</span>
             <input
               type="number"
               placeholder="Type here"
@@ -26,7 +26,7 @@ export const SizeForm = ({ changer = (_: IPlaygroundSize) => {} }) => {
         </div>
         <div className="form-control">
           <label className="input-group input-group-lg">
-            <span className="w-20">Height</span>
+            <span className="w-20">Height:</span>
             <input
               type="number"
               placeholder="Type here"
@@ -36,10 +36,10 @@ export const SizeForm = ({ changer = (_: IPlaygroundSize) => {} }) => {
               min={1}
             />
           </label>
+          <button className="btn btn-primary" type="submit">
+            Submit
+          </button>
         </div>
-        <button className="btn btn-primary" type="submit">
-          Submit
-        </button>
       </form>
     </div>
   );
