@@ -101,7 +101,7 @@ To run the project you need a package manager, like npm or yarn.
 
 ## Usage
 
-When you run the program, you need to visit [this link] or http://localhost:5173/
+When you run the program, you need to visit [this link]( http://localhost:5173/) or http://localhost:5173/
 
 You'll be at the landing page where you can define the size of the play field.
 
@@ -112,7 +112,6 @@ The other mode is the **hover** mode, where it works by moving the mouse over th
 When you want to reset the field, you can erase the current one with the ``Clear board`` button and get a new one using the same button.
 
 
-_For more examples, please refer to the [Documentation](https://example.com)_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
