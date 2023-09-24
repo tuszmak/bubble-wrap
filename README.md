@@ -48,9 +48,11 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
 When I casually surfed the web, I encountered a comment who made bubble wrap using markdown spoiler tags and a \*pop* text. I really liked the concept, but I wanted to improve on it. Here's my version of it!
+
+![Product Name Screen Shot][product-screenshot]
+
+
 
 Here's what I improved on that comment: 
 - You can choose the size of the playfield
@@ -67,8 +69,8 @@ This is my first solo project after I finished the school Codecool, and my first
 
 ### Built With
 
-* [![React][React.js]][React-url]
-* [![Typescript][Typescript]][React-url]
+* [![React][React.js]][React-url] 18.2.0
+* [![Typescript][Typescript]][React-url] 5.0.2
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
